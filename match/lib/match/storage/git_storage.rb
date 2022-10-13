@@ -91,6 +91,8 @@ module Match
 
         command = command_from_private_key(command) unless self.git_private_key.nil?
 
+        command += " --verbose"
+
         UI.message("Cloning remote git repo...")
         if self.branch && !self.clone_branch_directly
           UI.message("If cloning the repo takes too long, you can use the `clone_branch_directly` option in match.")
